@@ -1,0 +1,720 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>浩正网络科技有限公司</title>
+<link rel="stylesheet" href="css/jquery.fullPage.css">
+<script src="js/jquery-1.8.3.min.js"></script>
+<script src="js/jquery-ui-1.10.3.min.js"></script>
+<script src="js/jquery.fullPage.min.js"></script>
+<script>
+$(document).ready(function() {
+	$.fn.fullpage({
+		slidesColor: ['#FFF', '#FFF', '#FFF', '#FFF', '#FFF', '#FFF', '#FFF'],
+		anchors: ['page1', 'page2', 'page3', 'page4', 'page5', 'page6', 'page7'],
+		menu: '#menu',
+		navigation: true,
+		afterRender: function(){
+			
+			$('.t1_box .box1').each(function(){
+				$(this).animate({
+					opacity:1,
+					top:'290',
+					
+				}, 1000);
+			});
+			$('.t1_box .box2').each(function(){
+				$(this).animate({
+					opacity:1,
+				}, 1600);
+			});
+		},
+			
+		afterLoad: function(anchorLink, index){
+			if(index == 1){
+				$('.t1_box').find('.box1').delay(500).animate({
+					opacity:1,
+					top:'290',
+				}, 1000, 'easeOutExpo');
+				$('.t1_box .box2').each(function(){
+				$(this).animate({
+					opacity:1,
+				}, 1600);
+			});
+			}
+			if(index == 2){
+				$('.t2_cont').find('.t2_c1').delay(300).animate({
+					top: '0'
+				}, 1000, 'easeOutExpo');
+				$('.t2_cont').find('.t2_c2').delay(600).animate({
+					top: '0'
+				}, 1000, 'easeOutExpo');
+				$('.t2_cont').find('.t2_c3').delay(900).animate({
+					top: '0'
+				}, 1000, 'easeOutExpo');
+				$('.t2_cont').find('.t2_c4').delay(1200).animate({
+					top: '0'
+				}, 1000, 'easeOutExpo');
+			}
+			if(index == 3){
+				$('.section3').find('.t3_img').delay(500).animate({
+					bottom: '0'
+				}, 1500, 'easeOutExpo');
+			}
+			if(index == 4){
+
+				$('.section4').find('.t4_box').delay(300).animate({
+					opacity: '1'
+				}, 1500, 'easeOutExpo');
+			}
+			if(index == 5){
+				$('.section5').find('.t5_box').delay(300).animate({
+					opacity: '1'
+				}, 1500, 'easeOutExpo');
+			}
+		},
+		onLeave: function(index, direction){
+			if(index == 1){
+				$('.t1_box .box1').each(function(){
+				$(this).animate({
+					opacity:0,
+					top:'0',
+					
+				}, 1000);
+				});
+				$('.t1_box .box2').each(function(){
+				$(this).animate({
+					opacity:0,
+				}, 1200);
+			});
+			}
+			
+			if(index == '2'){
+				
+				$('.t2_cont').find('.t2_c1').delay(300).animate({
+					top: '50'
+				}, 1000, 'easeOutExpo');
+				$('.t2_cont').find('.t2_c2').delay(300).animate({
+					top: '50'
+				}, 1000, 'easeOutExpo');
+				$('.t2_cont').find('.t2_c3').delay(300).animate({
+					top: '50'
+				}, 1000, 'easeOutExpo');
+				$('.t2_cont').find('.t2_c4').delay(300).animate({
+					top: '50'
+				}, 1000, 'easeOutExpo');
+				
+			}
+			if(index == '3'){
+				$('.section3').find('.t3_img').delay(500).animate({
+					opacity:1,
+				}, 1500, 'easeOutExpo');
+			}
+			if(index == '4'){
+				$('.section4').find('.t4_box').delay(300).animate({
+					opacity: '0'
+				}, 1500, 'easeOutExpo');
+			}
+			if(index == '5'){
+				$('.section5').find('.t5_box').delay(300).animate({
+					opacity: '0'
+				}, 1500, 'easeOutExpo');
+			}
+		}
+	});
+	
+});
+</script>
+<!----------------------- 地图引入 ---------------------->
+
+
+<!--引用百度地图API-->
+<style type="text/css">
+    html,body{margin:0;padding:0;}
+    .iw_poi_title {color:#CC5522;font-size:14px;font-weight:bold;overflow:hidden;padding-right:13px;white-space:nowrap}
+    .iw_poi_content {font:12px arial,sans-serif;overflow:visible;padding-top:4px;white-space:-moz-pre-wrap;word-wrap:break-word}
+</style>
+ <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=134db1b9cf1f1f2b4427210932b34dcb"></script>
+<!------------------------- 地图结束 --------------------->
+</head>
+
+<body>
+<div id="menu">
+	<a href="#page1" class="logo"><img src="images/nav_left_logo.png"  alt=""/></a>
+    <ul >
+        <li data-menuanchor="page1" class="active"><a href="#page1"><span class="nav_en">HOME</span><span class="nav_ch">首页</span></a></li>
+        <li data-menuanchor="page2"><a href="#page2"><span class="nav_en">HOSTZONE</span><span class="nav_ch">主要</span></a></li>
+        <li data-menuanchor="page3"><a href="#page3"><span class="nav_en">SERVICE</span><span class="nav_ch">服务</span></a></li>
+        <li data-menuanchor="page4"><a href="#page4"><span class="nav_en">PROJECT</span><span class="nav_ch">案例</span></a></li>
+        <li data-menuanchor="page6"><a href="#page5"><span class="nav_en">ABOUT US</span><span class="nav_ch">我们</span></a></li>
+        <li data-menuanchor="page5"><a href="#page6"><span class="nav_en">NEWS</span><span class="nav_ch">资讯</span></a></li>
+        <li data-menuanchor="page7"><a href="#page7"><span class="nav_en">CONNECT</span><span class="nav_ch">联系</span></a></li>
+        
+    </ul>
+</div>
+<div class="foot_text"><h2>HOSTZONE TEC</h2> 浩正科技 版权所有. © 2016 .ALL RIGHTSRESERVED </div>
+
+<div class="section section1">
+	<div class="bg"><img src="images/t1_bg.jpg"  alt=""/></div>
+    <div class="t1_box">
+    	<div class="box1"></div>
+        <div class="box2"><img src="images/t1_text2.png"  alt=""/></div>
+		<div class="t1_bg2"></div>
+    </div>
+    <a href="#" class="shubiao"></a>
+</div>
+<div class="section section2">
+	<div class="bg"><img src="images/t234l7_bg.jpg"  alt=""/></div>
+	<div  class="t2_img">
+    	<div class="ind_title">
+            <h2>OUR ADVANTAGE</h2>
+            <span>互联网+整合运营服务提供商</span>
+        </div>
+    	<div class="t2_cont">
+        	<div class="t2_c1">
+    			<div class="blank50"></div>
+            	<div class="t2_biao"></div>
+                <div class="t2_text">
+                	<h2>专业服务PROFESSIONAL</h2>
+                    <div class="t2_ctxt">
+                    浩正独创‘创智思维’<br>
+                    互联网+全案服务模式<br>
+                    互联网思维驱动团队快速响应<br>
+                    360°全方位定制化解决方案<br>
+                    </div>
+                </div>
+            </div>
+            <div class="t2_c2">
+            	<div class="blank50"></div>
+            	<div class="t2_biao"></div>
+                <div class="t2_text">
+                	<h2>全网整合INTEGRATION</h2>
+                    <div class="t2_ctxt">
+                   浩正缔造 ‘平台战略’<br>
+                    实现线上线下整合营销<br>
+                    全网整合让资源无限互联<br>
+                    打破传统重塑消费诱导曲线<br>
+                    </div>
+                </div>
+            	
+            </div>
+            <div class="t2_c3">
+            	<div class="blank50"></div>
+            	<div class="t2_biao"></div>
+                <div class="t2_text">
+                	<h2>优质资源HIGH-QUALITY</h2>
+                    <div class="t2_ctxt">
+                    浩正借助‘BAT合作’<br>
+                    紧随BAT资源合作模式<br>
+                    500+优质广告位强势整合<br>
+                    9.6亿网民高覆盖<br>
+                    </div>
+                </div>
+            </div>
+            <div class="t2_c4">
+            	<div class="blank50"></div>
+            	<div class="t2_biao"></div>
+                <div class="t2_text">
+                	<h2>精准数据BIG-DATA</h2>
+                    <div class="t2_ctxt">
+                    浩正效果‘直线大数据’<br>
+互联网+大数据系统化分析<br>
+营销效果直线数据真实反馈<br>
+互联时代，让效果更加直观<br>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="section section3">
+	<div class="bg"><img src="images/t234l7_bg.jpg"  alt=""/></div>
+    <div class="slide">
+    	<div class="ind_title">
+            <h2>OUR SERVICE</h2>
+            <span>我们的服务</span>
+        </div>
+		<div class="t3_box1">
+        	<a class="t3_biao1" href="neiye_1.html">
+				<img src="images/t3_b1.png"  alt=""/>
+                <div class="t3_text">
+                	<h2>腾讯 · 智汇通 独家代理</h2>
+                    <div class="t3_tc">面向区域客户的企业营销<br>推广解决方案</div>
+                    <div class="blank10"></div>
+                    <Div class="t3_gd"></Div>
+                </div>
+            </a>
+            <a class="t3_biao2" href="neiye_2.html">
+				<img src="images/t3_b2.png"  alt=""/>
+                <div class="t3_text">
+                	<h2>腾讯 · 智汇推</h2>
+                    <div class="t3_tc">面向中小型企业的网络效果<br>服务营销</div>
+                    <div class="blank10"></div>
+                    <Div class="t3_gd"></Div>
+                </div>
+            </a>
+            <a class="t3_biao3"  href="#neiye_3.html">
+				<img src="images/t3_b3.png"  alt=""/>
+                <div class="t3_text">
+                	<h2>阿里 · 支付宝</h2>
+                    <div class="t3_tc">阿里支付宝战略合作伙伴
+<br>口碑支付业务开通及营销业务通道</div>
+                    <div class="blank10"></div>
+                    <Div class="t3_gd"></Div>
+                </div>
+            </a>
+            <a class="t3_biao4" href="neiye_4.html">
+				<img src="images/t3_b4.png"  alt=""/>
+                <div class="t3_text">
+                	<h2>腾讯 · 广点通</h2>
+                    <div class="t3_tc">腾讯社交网络体系的效果<br>广告平台</div>
+                    <div class="blank10"></div>
+                    <Div class="t3_gd"></Div>
+                </div>
+            </a>
+            <a class="t3_biao5" href="neiye_5.html">
+				<img src="images/t3_b5.png"  alt=""/>
+                <div class="t3_text">
+                	<h2>睿视产品</h2>
+                    <div class="t3_tc">专注视频广告的自助<br>投放平台</div>
+                    <div class="blank10"></div>
+                    <Div class="t3_gd"></Div>
+                </div>
+            </a>
+        </div>
+    </div>
+	<div class="slide">
+    	<div class="t3_c_box">
+            <div class="t3_c1">
+            	<h2 class="tc_ct">数据</h2>
+                <div class="t3_c_text">
+                增值客户端服务<br>
+                数据库服务<br>
+                数据管理服务<br>
+                数据咨询服务<br>
+                网络广告投放监测<br>
+                海量数据分析服务<br>
+                网络媒体流量审计<br>
+                移动用户流量审计<br>
+                互联网用户行为数据监测<br>
+                移动智能终端用户行为数据监测<br>
+                网络视频内容数据监测<br>
+                跨屏用户行为数据监<br>
+                用户标签数据管理平台<br>
+                用户标签数据交换平台与服务<br>
+
+                </div>
+            </div>
+            <div class="t3_c2">
+            	<h2 class="tc_ct">策略</h2>
+                <div class="t3_c_text">
+                战略整体规划<br>
+                品牌策略<br>
+                媒体整合策略<br>
+                网络品牌策略<br>
+                平台、网页策略<br>
+                产品策略<br>
+                价格策略<br>
+                线上、线下促销策略<br>
+                各方渠道策略<br>
+                客户服务策略<br>
+                营销策略<br>
+                互动营销策略<br>
+                微信营销<br>
+                SNS营销策略<br>
+                口碑营销策略<br>
+                危机公关策略<br>
+
+
+                </div>
+            </div>
+            <div class="t3_c3">
+            	<h2 class="tc_ct">媒介</h2>
+                <div class="t3_c_text">
+                媒体评估<br>
+                媒介选择<br>
+                媒体组合<br>
+                媒体效果监测<br>
+                媒体效果优化<br>
+                媒体策略<br>
+                媒体排期<br>
+                受众分析<br>
+                媒体资源整合<br>
+                SEO、SEM<br>
+
+
+                </div>
+            
+            </div>
+            <div class="t3_c4">
+            	<h2 class="tc_ct">创意</h2>
+                <div class="t3_c_text">
+                文案创意<br>
+                视觉创意<br>
+                热点追踪创意<br>
+                网站创意<br>
+                活动创意<br>
+                沟通创意<br>
+                互动社交创意<br>
+                TVC创意<br>
+                </div>
+            </div>
+            <div class="t3_c5">
+            	<h2 class="tc_ct">运营</h2>
+                <div class="t3_c_text">
+               	媒介后台运营<br>
+                数据管理<br>
+                活动运营<br>
+                活动设计<br>
+                活动效果分析<br>
+                文案撰写投稿<br>
+                社区管理<br>
+                市场推广运营<br>
+                撰写分析报告<br>
+                周、月、季、年报<br>
+                受众分析<br>
+                舆情分析监控<br>
+                活动预热、公关炒作<br>
+
+
+                </div>
+            </div>
+            <Div class="clear"></Div>
+        </div>
+    </div>
+</div>
+<div class="section section4">
+	<div class="bg"><img src="images/t234l7_bg.jpg"  alt=""/></div>
+	<div  class="t4_img">
+    	<div class="ind_title">
+            <h2>OUR PROJECT</h2>
+            <span>我们的案例</span>
+        </div>
+   		<Div class="t4_box">
+        	<div class="t4_con1">
+            	<h2>游戏</h2>
+                <Div class="t4_text">
+                线上推广<br>
+                数据归集<br>
+                分析策略<br>
+                创意执行
+                </Div>
+            </div>
+            <div class="t4_con2">
+            	<h2>金融</h2>
+                <Div class="t4_text">
+                轻度消费者唤醒<br>
+                品牌推广<br>
+                落地执行<br>
+                全网营销<br>
+                线下助力
+                </Div>
+            </div>
+            <div class="t4_con3">
+            	<h2>旅游</h2>
+                <Div class="t4_text">
+                网络运营<br>
+                落地推广<br>
+                品牌实战营销<br>
+                全线活动串联<br>
+                </Div>
+            </div>
+            <div class="t4_con4">
+            	<h2>快消</h2>
+                <Div class="t4_text">
+                品牌塑造<br>
+                新品推广<br>
+                全案规划<br>
+                产品转型<br>
+                创意活动
+                </Div>
+            </div>
+            <div class="t4_con5">
+            	<h2>汽车</h2>
+                <Div class="t4_text">
+                品牌推广<br>
+                新款车型推广<br>
+                车展活动<br>
+                落地执行
+                </Div>
+            </div>
+            <div class="t4_con6">
+            	<h2>会展</h2>
+                <Div class="t4_text">
+                展会推广<br>
+                招商推广<br>
+                活动策划<br>
+                落地执行
+                </Div>
+            </div>
+        </Div>
+    </div>
+</div>
+<div class="section section5">
+	<div class="bg"><img src="images/t5_bg.jpg"  alt=""/></div>
+	<div  class="t5_img">
+    	<div class="ind_title">
+            <h2>ABOUT HOSTZONE</h2>
+            <span>关于浩正</span>
+        </div>
+    	<div class="t5_box">
+        浩正科技，始于2010年。首创“创智思维法则”切实有效的为企业解决互联网时代下产业及品牌升级与转型浩正科技自成立以来就摒弃了传统广告或营销策划行业浮躁、虚假与形式主义的三大弊病，以扎实的营销实战经验与务实的工作态度，结合时代发展充分学习理解互联网思维，真正实现整合全网资源，协助众多企业在市场上获得巨大突破。互联网+整合服务运营提供商，实现一体化式营销服务，切实有效的为企业规避商业风险，顺应时代发展，决胜市场竞争。
+        <div class="blank30"></div>
+        <img src="images/about_img.jpg"  alt=""/>
+        </div>
+    </div>
+</div>
+<div class="section section6">
+	<div class="bg"><img src="images/t234l7_bg.jpg"  alt=""/></div>
+	<div  class="t6_img">
+    	<div class="ind_title">
+            <h2>LATSET NEWS</h2>
+            <span>最新动态</span>
+        </div>
+    	<div class="t6_box">
+        	<ul>
+            	<li>
+                	<a href="news_show.html">
+                    	<img src="images/news_img1.jpg"  alt=""/>
+                        <Div class="time">
+                        <p>JAN</p>
+                        <strong>26</strong>
+                        </Div>
+                        <div class="news_text">
+                        	<h2>与浩正一起成长，创造未来</h2>
+                            <p>为企业提供基于互联网的网络营销咨询服务及媒体整合营销服务，满足企业市场营销的推广需求及个性化营销策划需求。</p>
+                            <span class="gd_2"></span>
+                        </div>
+                    
+                    </a>
+                </li>
+                <li>
+                	<a href="news_show.html">
+                    	<img src="images/news_img1.jpg"  alt=""/>
+                        <Div class="time">
+                        <p>JAN</p>
+                        <strong>26</strong>
+                        </Div>
+                        <div class="news_text">
+                        	<h2>与浩正一起成长，创造未来</h2>
+                            <p>为企业提供基于互联网的网络营销咨询服务及媒体整合营销服务，满足企业市场营销的推广需求及个性化营销策划需求。</p>
+                            <span class="gd_2"></span>
+                        </div>
+                    
+                    </a>
+                </li>
+                <li>
+                	<a href="news_show.html">
+                    	<img src="images/news_img1.jpg"  alt=""/>
+                        <Div class="time">
+                        <p>JAN</p>
+                        <strong>26</strong>
+                        </Div>
+                        <div class="news_text">
+                        	<h2>与浩正一起成长，创造未来</h2>
+                            <p>为企业提供基于互联网的网络营销咨询服务及媒体整合营销服务，满足企业市场营销的推广需求及个性化营销策划需求。</p>
+                            <span class="gd_2"></span>
+                        </div>
+                    
+                    </a>
+                </li>
+                <Div class="blank50"> </Div>
+            </ul>
+            <a class="n_gd" href="news_list.html">MORE</a>
+        </div>
+    </div>
+</div>
+<div class="section section7">
+	<div class="bg"><img src="images/t234l7_bg.jpg"  alt=""/></div>
+	<div  class="t7_img">
+    	<div class="ind_title">
+            <h2>CONNECT US</h2>
+            <span>联系我们</span>
+        </div>
+        <div class="t7_cont">
+    		<div class="map">
+                 <div class="map_a" style="width:280px;height:280px;border:#ccc solid 1px; " id="dituContent"></div>
+                 <div class="map_txt">
+                 	<h2>山东济南(总部)</h2>
+                    <Div class="dizhi">地址：山东省济南市历下区院前街1号珍珠泉宾馆9号楼</Div>
+                    <Div class="mail">邮箱：haozhengkeji@qq.com</Div>
+                    <Div class="dianhua">电话：0531-85222888</Div>
+                 </div>
+            </div>
+            <div class="map">
+                <div class="map_a" style="width:280px;height:280px;border:#ccc solid 1px;font-size:12px; margin:0 auto;" id="map2"></div>
+                <div class="map_txt">
+                 	<h2>山东枣庄(分公司)</h2>
+                    <Div class="dizhi">地址：山东省枣庄市市中区文化中路41号</Div>
+                    <Div class="mail">邮箱：776493972@qq.com</Div>
+                    <Div class="dianhua">电话：0632-3266166</Div>
+                 </div>
+            </div>
+            <div class="map">
+                <div class="map_a" style="width:280px;height:280px;border:#ccc solid 1px;margin:0 auto; background:#F5F3F0; " id="map3"><div style="padding-top:60px;font-size:32px; line-height:50px;">WE’LL <br>
+COMMING <br>
+SOON</div></div>
+                <div class="map_txt">
+                 	<h2>山东泰安(分公司) 筹建中……</h2>
+                    
+                    <Div class="dianhua">电话：0632-3266166</Div>
+                 </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-------------------------------- 地图引入（济南） -------------------->
+<script type="text/javascript">
+    //创建和初始化地图函数：
+    function initMap(){
+        createMap();//创建地图
+        setMapEvent();//设置地图事件
+        addMapControl();//向地图添加控件
+        addMarker();//向地图中添加marker
+    }
+    
+    //创建地图函数：
+    function createMap(){
+        var map = new BMap.Map("dituContent");//在百度地图容器中创建一个地图
+        var point = new BMap.Point(117.032996,36.672746);//定义一个中心点坐标
+        map.centerAndZoom(point,17);//设定地图的中心点和坐标并将地图显示在地图容器中
+        window.map = map;//将map变量存储在全局
+    }
+    
+    //地图事件设置函数：
+    function setMapEvent(){
+        map.enableDragging();//启用地图拖拽事件，默认启用(可不写)
+        map.enableScrollWheelZoom();//启用地图滚轮放大缩小
+        map.enableDoubleClickZoom();//启用鼠标双击放大，默认启用(可不写)
+        map.enableKeyboard();//启用键盘上下左右键移动地图
+    }
+    
+    //地图控件添加函数：
+    function addMapControl(){
+                        }
+    
+    //标注点数组
+    var markerArr = [{title:"山东济南(总部)",content:"地址：山东省济南市历下区院前街1号珍珠泉宾馆9号楼<br/>邮箱：haozhengkeji@qq.com<br/>电话：0531-85222888",point:"117.03296|36.672818",isOpen:0,icon:{w:23,h:25,l:46,t:21,x:9,lb:12}}
+		 ];
+    //创建marker
+    function addMarker(){
+        for(var i=0;i<markerArr.length;i++){
+            var json = markerArr[i];
+            var p0 = json.point.split("|")[0];
+            var p1 = json.point.split("|")[1];
+            var point = new BMap.Point(p0,p1);
+			var iconImg = createIcon(json.icon);
+            var marker = new BMap.Marker(point,{icon:iconImg});
+			var iw = createInfoWindow(i);
+			var label = new BMap.Label(json.title,{"offset":new BMap.Size(json.icon.lb-json.icon.x+10,-20)});
+			marker.setLabel(label);
+            map.addOverlay(marker);
+            label.setStyle({
+                        borderColor:"#808080",
+                        color:"#333",
+                        cursor:"pointer"
+            });
+			
+			(function(){
+				var index = i;
+				var _iw = createInfoWindow(i);
+				var _marker = marker;
+				_marker.addEventListener("click",function(){
+				    this.openInfoWindow(_iw);
+			    });
+			    _iw.addEventListener("open",function(){
+				    _marker.getLabel().hide();
+			    })
+			    _iw.addEventListener("close",function(){
+				    _marker.getLabel().show();
+			    })
+				label.addEventListener("click",function(){
+				    _marker.openInfoWindow(_iw);
+			    })
+				if(!!json.isOpen){
+					label.hide();
+					_marker.openInfoWindow(_iw);
+				}
+			})()
+        }
+    }
+    //创建InfoWindow
+    function createInfoWindow(i){
+        var json = markerArr[i];
+        var iw = new BMap.InfoWindow("<b class='iw_poi_title' title='" + json.title + "'>" + json.title + "</b><div class='iw_poi_content'>"+json.content+"</div>");
+        return iw;
+    }
+    //创建一个Icon
+    function createIcon(json){
+        var icon = new BMap.Icon("http://app.baidu.com/map/images/us_mk_icon.png", new BMap.Size(json.w,json.h),{imageOffset: new BMap.Size(-json.l,-json.t),infoWindowOffset:new BMap.Size(json.lb+5,1),offset:new BMap.Size(json.x,json.h)})
+        return icon;
+    }
+    
+    initMap();//创建和初始化地图
+</script>
+<!---------------------------- 枣庄地图 ------------------------>
+<script type="text/javascript">
+    //创建和初始化地图函数：
+    function initMap(){
+      createMap();//创建地图
+      setMapEvent();//设置地图事件
+      addMapControl();//向地图添加控件
+      addMapOverlay();//向地图添加覆盖物
+    }
+    function createMap(){ 
+      map = new BMap.Map("map2"); 
+      map.centerAndZoom(new BMap.Point(117.571634,34.858561),18);
+    }
+    function setMapEvent(){
+      map.enableScrollWheelZoom();
+      map.enableKeyboard();
+      map.enableDragging();
+      map.enableDoubleClickZoom()
+    }
+    function addClickHandler(target,window){
+      target.addEventListener("click",function(){
+        target.openInfoWindow(window);
+      });
+    }
+    function addMapOverlay(){
+      var markers = [
+        {content:"山东省枣庄市市中区文化中路41号  邮箱 ：776493972@qq.com  电话: 0632-3266166",title:"山东枣庄(分公司)",imageOffset: {width:-46,height:-21},position:{lat:34.857954,lng:117.571374}},
+      ];
+      for(var index = 0; index < markers.length; index++ ){
+        var point = new BMap.Point(markers[index].position.lng,markers[index].position.lat);
+        var marker = new BMap.Marker(point,{icon:new BMap.Icon("http://api.map.baidu.com/lbsapi/createmap/images/icon.png",new BMap.Size(20,25),{
+          imageOffset: new BMap.Size(markers[index].imageOffset.width,markers[index].imageOffset.height)
+        })});
+        var label = new BMap.Label(markers[index].title,{offset: new BMap.Size(25,5)});
+        var opts = {
+          width: 200,
+          title: markers[index].title,
+          enableMessage: false
+        };
+        var infoWindow = new BMap.InfoWindow(markers[index].content,opts);
+        marker.setLabel(label);
+        addClickHandler(marker,infoWindow);
+        map.addOverlay(marker);
+      };
+      var labels = [
+      ];
+      for(var index = 0; index < labels.length; index++){
+        var opt = { position: new BMap.Point(labels[index].position.lng,labels[index].position.lat )};
+        var label = new BMap.Label(labels[index].content,opt);
+        map.addOverlay(label);
+      };
+    }
+    //向地图添加控件
+    function addMapControl(){
+      var navControl = new BMap.NavigationControl({anchor:BMAP_ANCHOR_TOP_LEFT,type:BMAP_NAVIGATION_CONTROL_LARGE});
+      map.addControl(navControl);
+    }
+    var map;
+      initMap();
+  </script>
+
+
+</body>
+</html>
